@@ -1,0 +1,34 @@
+version:    '3.4'
+
+services:
+    #web_service: ''
+    graph_service:
+        image: neo4j:latest
+        #stdin_open: true
+        #tty: true
+        user: root
+        environment:
+            NEO4J_AUTH: none
+            NEO4J_dbms_default__listen__address: 0.0.0.0
+        volumes:
+            #- graph_conf:/conf
+            - graph_data:/data
+            #- graph_import:/import
+            #- graph_logs:/logs
+            #- graph_metrics:/metrics
+            #- graph_plugins:/plugins
+            #- graph_ssl:/ssl
+        ports:
+            - '7473:7473'
+            - '7474:7474'
+            - '7687:7687'
+    #api_service:
+
+volumes: 
+    graph_conf:
+    graph_data:
+    graph_import:
+    graph_logs:
+    graph_metrics:
+    graph_plugins:
+    graph_ssl:
