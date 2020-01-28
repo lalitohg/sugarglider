@@ -1,0 +1,42 @@
+{
+  "name": "sugarglider-api",
+  "version": "1.0.0",
+  "description": "Sugarglider project API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "export NODE_ENV=dev && node index",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalitohg/sugarglider.git"
+  },
+  "keywords": [
+    "graphql",
+    "sugarglider",
+    "neo4j",
+    "express",
+    "node",
+    "API"
+  ],
+  "author": "Eduardo Hernández Guerrero",
+  "license": " GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/lalitohg/sugarglider/issues"
+  },
+  "homepage": "https://github.com/lalitohg/sugarglider#readme",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "chai": "4.2.0",
+    "express": "4.17.1",
+    "express-graphql": "0.9.0",
+    "graphql": "14.5.8",
+    "helmet": "3.21.2",
+    "istanbul": "0.4.5",
+    "moka": "0.2.0",
+    "morgan": "1.9.1"
+  },
+  "devDependencies": {
+    "dotenv": "8.2.0"
+  }
+}
