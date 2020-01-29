@@ -1,12 +1,12 @@
-version:    '3.4'
+version: '3.4'
 
 services:
-    #web_service: ''
-    graph_service:
+    #web_service:
+    neo4j:
         image: neo4j:latest
         #stdin_open: true
         #tty: true
-        user: root
+        # user: root
         environment:
             NEO4J_AUTH: none
             NEO4J_dbms_default__listen__address: 0.0.0.0
@@ -22,7 +22,20 @@ services:
             - '7473:7473'
             - '7474:7474'
             - '7687:7687'
-    #api_service:
+        networks:
+            - backend
+    api:
+        build: ./api/
+        depends_on:
+            - "neo4j"
+        ports:
+            - '3000:3000'
+        volumes:
+            - ./api:/usr/src/app
+        networks:
+            - backend
+            - frontend
+        command: ["npm", "run", "dev"]
 
 volumes: 
     graph_conf:
@@ -32,3 +45,7 @@ volumes:
     graph_metrics:
     graph_plugins:
     graph_ssl:
+
+networks:
+    backend:
+    frontend:
