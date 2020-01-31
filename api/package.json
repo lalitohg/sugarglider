@@ -4,7 +4,7 @@
   "description": "Sugarglider project API",
   "main": "index.js",
   "scripts": {
-    "dev": "export NODE_ENV=dev && node index",
+    "dev": "export NODE_ENV=dev && node --inspect=0.0.0.0:9229 index",
     "test": "test"
   },
   "repository": {
